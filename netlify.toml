@@ -1,0 +1,53 @@
+# Netlify configuration for the Sarah Miller landing page.
+# Static site: no build step. Only public/ is published; the contact form runs as a Netlify Function.
+
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+  # No build command on purpose (pages are pre-generated and committed in public/).
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# ---------------------------------------------------------------------------
+# Headers
+# Asset filenames are NOT fingerprinted, so nothing here is "immutable".
+# Every cached file revalidates after its max-age, so edits reach visitors quickly.
+# ---------------------------------------------------------------------------
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# HTML: always revalidate (304 when unchanged)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Config holds the checkout link: always revalidate so a change goes live immediately
+[[headers]]
+  for = "/js/site-config.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# CSS and the other scripts: 1 hour, then revalidate
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Images: 1 day, then serve stale while revalidating in the background for up to 7 days
+[[headers]]
+  for = "/assets/optimized/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"

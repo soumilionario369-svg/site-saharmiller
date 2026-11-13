@@ -1,0 +1,13 @@
+{
+  "name": "sarah-miller-landing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "optimize": "node scripts/optimize-images.mjs",
+    "start": "node server.mjs",
+    "build:pages": "node scripts/build-pages.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
+}

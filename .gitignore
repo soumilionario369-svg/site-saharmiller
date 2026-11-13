@@ -1,0 +1,36 @@
+# Dependencies and build artifacts
+node_modules/
+.netlify/
+dist/
+build/
+.cache/
+*.log
+
+# Secrets (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local tooling (not part of the site)
+.claude/
+
+# Large or non-site material kept locally only
+*.zip
+/IMAGENS SITE/
+/ref-sites-extracted/
+/assets/original/
+/assets/optimized/
+/textos jurídicos/
+/Sarah_Miller_*.txt
+/briefing_visual_sarah_miller.txt
+/LEGAL_REVIEW_CHECKLIST.md
+/screenshots/
+*.screenshot.png

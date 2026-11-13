@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Sarah Miller</title>
+  <meta name="description" content="Questions about 200 Delicious Recipes, your digital cookbook access, or an order? Send us a message.">
+  <!-- STAGING: remove this tag when the owner approves publication (same as index.html). -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#09273A">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309273A'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23F7E9D3'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="wordmark" href="/" aria-label="Sarah Miller — Recipe Collection, home">
+        <span class="wordmark__name">Sarah Miller</span>
+        <span class="wordmark__desc">Recipe Collection</span>
+      </a>
+      <a class="header-link" href="/">← Back to the cookbook</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="doc">
+      <h1>Contact Us</h1>
+      <p class="doc__lead">We’re here to help.</p>
+      <p>Have a question about <strong>200 Delicious Recipes</strong>, your digital cookbook access, or a recent order? Send us a message using the form below.</p>
+
+      <form class="contact-form" id="contact-form" method="post" action="/api/contact" novalidate>
+          <div class="field">
+            <label for="cf-name">Name <span class="field__req">(required)</span></label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" maxlength="100" required placeholder="Your name" aria-describedby="cf-name-error">
+            <p class="field__error" id="cf-name-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email address <span class="field__req">(required)</span></label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" maxlength="254" required placeholder="you@example.com" aria-describedby="cf-email-error">
+            <p class="field__error" id="cf-email-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="cf-subject">Subject <span class="field__req">(required)</span></label>
+            <input type="text" id="cf-subject" name="subject" maxlength="150" required placeholder="What can we help you with?" aria-describedby="cf-subject-error">
+            <p class="field__error" id="cf-subject-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="cf-order">Order number <span class="field__opt">(optional)</span></label>
+            <input type="text" id="cf-order" name="order" maxlength="60" autocomplete="off" placeholder="If your question is about an order" aria-describedby="cf-order-error">
+            <p class="field__error" id="cf-order-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message <span class="field__req">(required)</span></label>
+            <textarea id="cf-message" name="message" rows="6" maxlength="3000" required placeholder="Tell us how we can help" aria-describedby="cf-message-error"></textarea>
+            <p class="field__error" id="cf-message-error" hidden></p>
+          </div>
+          <div class="field field--trap" aria-hidden="true">
+            <label for="cf-website">Leave this field empty</label>
+            <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+        <button type="submit" class="btn contact-form__submit">Send Message</button>
+        <div class="form-status" id="cf-status" role="status" aria-live="polite" tabindex="-1"></div>
+        <p class="qa-inline" data-staging-only>Staging: the contact form only delivers once the server endpoint has its email provider configured (see README, “Contact form”).</p>
+        <p class="form-note">We use the information you submit to respond to your message and assist with your request. Please see our <a href="/privacy-policy">Privacy Policy</a> for details. Do not include passwords or payment-card information.</p>
+      </form>
+
+      <p class="contact-alt">Prefer email? Write to <strong><a href="mailto:millersarahj980@gmail.com">millersarahj980@gmail.com</a></strong>.</p>
+    </article>
+  </main>
+
+  <!-- FOOTER:START (generated by scripts/build-pages.mjs - edit it there) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div>
+          <p class="site-footer__brand">Sarah Miller</p>
+          <p>Digital cookbooks for delicious everyday cooking.</p>
+        </div>
+        <nav aria-label="Legal and contact">
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/refund-policy">Refund Policy</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__fine">The recipes are intended for general culinary inspiration and do not constitute medical or nutritional advice.</p>
+      <p class="site-footer__fine">Checkout and payments are processed through Whop.</p>
+      <p class="site-footer__fine">© <span data-year>2026</span> Sarah Miller. All rights reserved.</p>
+      <p class="qa-inline qa-inline--dark" data-staging-only>Staging: policy pages are drafts pending legal review (see LEGAL_REVIEW_CHECKLIST.md).</p>
+    </div>
+  </footer>
+  <!-- FOOTER:END -->
+
+  <script src="/js/site-config.js"></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/contact.js" defer></script>
+</body>
+</html>
