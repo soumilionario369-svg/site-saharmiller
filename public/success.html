@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>Payment return</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:0 auto;padding:24px 16px}</style></head>
+<body>
+<h1>Returned from Whop</h1>
+<p>Query parameters received (read <code>status</code>; this page proves nothing about fulfillment):</p>
+<pre id="p">(none)</pre>
+<p>Verify the order and memberships in the Whop sandbox dashboard.</p>
+<script>
+  var o = {}; new URLSearchParams(location.search).forEach(function (v, k) { o[k] = v; });
+  if (Object.keys(o).length) document.getElementById("p").textContent = JSON.stringify(o, null, 2);
+</script>
+</body></html>

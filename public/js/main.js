@@ -17,11 +17,16 @@
   var url = safeCheckoutUrl(cfg.WHOP_CHECKOUT_URL);
   if (cfg.WHOP_CHECKOUT_URL && !url) console.warn('[site-config] WHOP_CHECKOUT_URL is invalid; purchase buttons stay disabled.');
 
-  if (url) {
+  // Page 2: purchase buttons open the on-site checkout page (a same-site path such as "/checkout").
+  // Only "/something" is accepted (no "//host", no schemes). If empty, the Whop URL above is the fallback.
+  var pagePath = (typeof cfg.CHECKOUT_PAGE_PATH === 'string' && /^\/(?!\/)[\w\-\/]*$/.test(cfg.CHECKOUT_PAGE_PATH.trim())) ? cfg.CHECKOUT_PAGE_PATH.trim() : '';
+  var target = pagePath || url;
+
+  if (target) {
     document.querySelectorAll('button[data-cta]').forEach(function (btn) {
       var a = document.createElement('a');
       a.className = btn.className;
-      a.href = url; // same tab by default
+      a.href = target; // same tab by default
       a.textContent = btn.textContent;
       a.setAttribute('data-cta', '');
       btn.replaceWith(a);
@@ -59,7 +64,7 @@
   var qa = cfg.STAGING !== false && (cfg.SHOW_QA_NOTICES === true || /[?&]qa=1\b/.test(location.search));
   if (qa) document.documentElement.classList.add('qa-on');
   if (cfg.STAGING !== false) {
-    console.info('[QA] Staging build - launch blockers: ' + (cfg.WHOP_CHECKOUT_URL ? '' : 'Whop URL missing; ') +
+    console.info('[QA] Staging build - launch blockers: ' + (target ? '' : 'checkout link missing; ') +
       'legal pages pending review; see QA-CHECKLIST.md. Add ?qa=1 to the URL to show QA notices.');
   }
 

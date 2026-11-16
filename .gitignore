@@ -34,3 +34,7 @@ Thumbs.db
 /LEGAL_REVIEW_CHECKLIST.md
 /screenshots/
 *.screenshot.png
+
+# Page 2 checkout: internal notes and review screenshots
+/CHECKOUT_QA_NOTES.md
+/checkout/review/

@@ -7,6 +7,10 @@ window.SITE_CONFIG = {
   // While empty, every purchase button stays disabled and shows "Checkout link pending setup".
   WHOP_CHECKOUT_URL: "",
 
+  // Page 2: every purchase button opens this on-site checkout page (public/checkout/, currently in SANDBOX mode).
+  // Set "" to fall back to WHOP_CHECKOUT_URL.
+  CHECKOUT_PAGE_PATH: "/checkout",
+
   // Public domain, e.g. "https://www.example.com". Leave "" until known (no canonical/og:url is written).
   SITE_URL: "",
 
