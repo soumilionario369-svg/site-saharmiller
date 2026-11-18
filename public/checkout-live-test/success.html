@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>Live test return</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:0 auto;padding:24px 16px}pre{background:#f3f3f3;padding:12px;border-radius:8px;overflow:auto}</style></head>
+<body>
+<h1>Returned from Whop (internal live test)</h1>
+<p>Query parameters received (read <code>status</code>; this page proves nothing about payment or fulfillment):</p>
+<pre id="p">(none)</pre>
+<p>Verify the real payment, the charged amount, the fees and the product access in the Whop dashboard.</p>
+<script>
+  var o = {}; new URLSearchParams(location.search).forEach(function (v, k) { o[k] = v; });
+  if (Object.keys(o).length) document.getElementById("p").textContent = JSON.stringify(o, null, 2);
+</script>
+</body></html>

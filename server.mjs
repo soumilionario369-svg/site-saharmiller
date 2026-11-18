@@ -14,7 +14,7 @@ const types = {
   '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.ico': 'image/x-icon',
 };
 // Only these top-level paths are public (keeps api/, scripts/, node_modules/, *.md out of reach)
-const PUBLIC = [/^\/(index|privacy-policy|refund-policy|contact|success)(\.html)?$/, /^\/checkout\/?$/, /^\/checkout\/[\w.-]+$/, /^\/checkout\/assets\/[\w.-]+$/, /^\/css\//, /^\/js\//, /^\/assets\/optimized\//];
+const PUBLIC = [/^\/(index|privacy-policy|refund-policy|contact|success)(\.html)?$/, /^\/checkout\/?$/, /^\/checkout\/[\w.-]+$/, /^\/checkout\/assets\/[\w.-]+$/, /^\/checkout-live-test\/?$/, /^\/checkout-live-test\/[\w.-]+$/, /^\/css\//, /^\/js\//, /^\/assets\/optimized\//];
 
 const server = http.createServer(async (req, res) => {
   const u = new URL(req.url, 'http://localhost');
@@ -27,6 +27,7 @@ const server = http.createServer(async (req, res) => {
 
   let file = path.join(root, p);
   if (p === '/checkout' || p === '/checkout/') file = path.join(root, 'checkout', 'index.html');
+  else if (p === '/checkout-live-test' || p === '/checkout-live-test/') file = path.join(root, 'checkout-live-test', 'index.html');
   else if (!path.extname(file)) file += '.html';
   if (!file.startsWith(root + path.sep)) { res.statusCode = 403; return res.end('Forbidden'); }
   fs.readFile(file, (err, buf) => {

@@ -35,6 +35,19 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# Internal live payment test route: never indexed, always revalidated (noindex is NOT access protection)
+[[headers]]
+  for = "/checkout-live-test"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/checkout-live-test/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"
+
 # CSS and the other scripts: 1 hour, then revalidate
 [[headers]]
   for = "/css/*"
