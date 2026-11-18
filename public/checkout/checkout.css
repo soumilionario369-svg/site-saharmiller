@@ -63,7 +63,15 @@
 .co-product__name { font-size: 1.3rem; line-height: 1.12; margin-bottom: 8px; }
 @media (min-width: 640px) { .co-product__name { font-size: 1.6rem; } }
 .co-product__format { font-size: .875rem; color: #4B5A61; margin: 8px 0 2px !important; }
-.co-product__price { font-weight: 700; font-size: 1.25rem; color: var(--c-navy); margin: 0 !important; }
+/* Reference price + discount badge (same look as the landing page, compact). Display only: Whop charges the plan price. */
+.co-pricing { margin-top: 8px; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+.co-pricing p { margin: 0 !important; max-width: none; }
+.co-pricing__row { display: flex; align-items: center; gap: 10px; margin-bottom: 4px !important; line-height: 1.2; }
+.co-pricing__ref { font-family: var(--f-head); font-weight: 600; font-size: 1rem; color: #66737A; text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.co-pricing__badge { display: inline-block; padding: 2px 8px; border-radius: 6px; background: #F8DAD6; color: #94302B; font: 600 .75rem/1.4 var(--f-body); letter-spacing: .02em; white-space: nowrap; }
+.co-pricing__final { display: flex; align-items: baseline; gap: 8px; line-height: 1; }
+.co-pricing__amount { font-family: var(--f-head); font-weight: 600; font-size: 2rem; color: var(--c-navy); }
+.co-pricing__cur { font-size: .8125rem; font-weight: 600; letter-spacing: .06em; color: #4d5b62; }
 
 /* Checkmark lists */
 .co-checks li, .co-checks > span { position: relative; padding-left: 24px; font-weight: 500; }
@@ -115,7 +123,10 @@
 .co-addon__desc { font-size: .875rem; color: #3B494F; line-height: 1.45; }
 .co-addon__foot { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-top: 1px solid var(--c-border); padding-top: 8px; }
 .co-addon__product { font-weight: 700; font-size: .9rem; color: var(--c-navy); }
-.co-addon__price { font-weight: 700; font-size: 1.05rem; color: var(--c-navy); white-space: nowrap; }
+.co-addon__price { font-weight: 700; font-size: 1.05rem; color: var(--c-navy); white-space: nowrap; display: flex; flex-direction: column; align-items: flex-end; gap: 3px; line-height: 1.1; }
+.co-addon__was { display: flex; align-items: center; gap: 6px; font-size: .8125rem; font-weight: 600; color: #66737A; }
+.co-addon__was s { text-decoration-thickness: 1.5px; }
+.co-addon__off { padding: 1px 6px; border-radius: 6px; background: #F8DAD6; color: #94302B; font-size: .6875rem; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
 .co-addon__note { font-size: .78rem; color: #55656C; margin-top: -4px; }
 @media (min-width: 640px) {
   .co-addon__label { padding: 18px 20px 18px 16px; gap: 16px; }

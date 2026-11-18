@@ -41,19 +41,22 @@
                    alt="The 200 Delicious Recipes digital cookbook, shown as a 3D book cover.">
             </picture>
             <div class="co-product__info">
-              <h2 class="co-product__name">200 Delicious Recipes — The Complete Recipe Collection</h2>
+              <h2 class="co-product__name">200 Delicious Recipes — The Complete Easy Yum Collection by Sarah Miller</h2>
               <ul class="co-checks">
                 <li>100 High-Protein Meals</li>
                 <li>100 Naturally Sweet Desserts</li>
               </ul>
               <p class="co-product__format">Digital cookbook · One-time purchase</p>
-              <p class="co-product__price" id="co-main-price">$24.97 USD</p>
+              <div class="co-pricing" id="co-main-price" role="group" aria-label="Price: regularly $35.67, 30 percent off, now $24.97 US dollars, one-time payment">
+                <p class="co-pricing__row" aria-hidden="true"><s class="co-pricing__ref">$35.67</s> <span class="co-pricing__badge">30% OFF</span></p>
+                <p class="co-pricing__final" aria-hidden="true"><span class="co-pricing__amount">$24.97</span> <span class="co-pricing__cur">USD</span></p>
+              </div>
             </div>
           </div>
         </section>
 
         <section class="co-taste" aria-labelledby="co-taste-label">
-          <h2 class="co-micro" id="co-taste-label">A Taste of What's Inside</h2>
+          <h2 class="co-micro" id="co-taste-label">A Taste of What’s Inside</h2>
           <ul class="co-taste__grid" data-rail role="group" aria-label="Recipe photos">
             <li>
               <figure>
@@ -93,7 +96,7 @@
           <!-- Add-on 1 -->
           <div class="co-addon" id="addon-breakfasts">
             <label class="co-addon__label" for="cb-breakfasts">
-              <input class="co-addon__input" type="checkbox" id="cb-breakfasts" name="addon-breakfasts" aria-label="Add 50 Breakfasts &amp; Snacks for $9.97">
+              <input class="co-addon__input" type="checkbox" id="cb-breakfasts" name="addon-breakfasts" aria-label="Add 50 Breakfasts &amp; Snacks for $9.97, regularly $12.46, 20 percent off">
               <span class="co-addon__content">
                 <img class="co-addon__cover" src="/checkout/assets/addon-breakfasts-220.webp"
                      srcset="/checkout/assets/addon-breakfasts-220.webp 220w, /checkout/assets/addon-breakfasts-440.webp 440w" sizes="(min-width: 640px) 120px, 76px"
@@ -113,7 +116,7 @@
                   </span>
                   <span class="co-addon__foot">
                     <span class="co-addon__product">50 Breakfasts &amp; Snacks</span>
-                    <span class="co-addon__price" id="price-breakfasts">+$9.97</span>
+                    <span class="co-addon__price" id="price-breakfasts"><span class="co-addon__was" aria-hidden="true"><s>$12.46</s> <span class="co-addon__off">20% OFF</span></span><span aria-hidden="true">+$9.97</span></span>
                   </span>
                   <span class="co-addon__note">Optional digital cookbook · One-time purchase</span>
                 </span>
@@ -124,7 +127,7 @@
           <!-- Add-on 2 -->
           <div class="co-addon" id="addon-christmas">
             <label class="co-addon__label" for="cb-christmas">
-              <input class="co-addon__input" type="checkbox" id="cb-christmas" name="addon-christmas" aria-label="Add 30 Christmas Desserts for $4.97">
+              <input class="co-addon__input" type="checkbox" id="cb-christmas" name="addon-christmas" aria-label="Add 30 Christmas Desserts for $4.97, regularly $6.21, 20 percent off">
               <span class="co-addon__content">
                 <img class="co-addon__cover" src="/checkout/assets/addon-christmas-220.webp"
                      srcset="/checkout/assets/addon-christmas-220.webp 220w, /checkout/assets/addon-christmas-440.webp 440w" sizes="(min-width: 640px) 120px, 76px"
@@ -144,7 +147,7 @@
                   </span>
                   <span class="co-addon__foot">
                     <span class="co-addon__product">30 Christmas Desserts</span>
-                    <span class="co-addon__price" id="price-christmas">+$4.97</span>
+                    <span class="co-addon__price" id="price-christmas"><span class="co-addon__was" aria-hidden="true"><s>$6.21</s> <span class="co-addon__off">20% OFF</span></span><span aria-hidden="true">+$4.97</span></span>
                   </span>
                   <span class="co-addon__note">Optional digital cookbook · One-time purchase</span>
                 </span>
@@ -195,7 +198,7 @@
       <h2 class="visually-hidden" id="co-faq-title">Frequently asked questions</h2>
       <details>
         <summary>What will I receive?</summary>
-        <p>You'll receive digital access to 200 Delicious Recipes, including 100 high-protein meals and 100 naturally sweetened desserts. Any extra cookbooks are included only if you choose to add them.</p>
+        <p>You’ll receive digital access to 200 Delicious Recipes, including 100 high-protein meals and 100 naturally sweetened desserts. Any extra cookbooks are included only if you choose to add them.</p>
       </details>
       <details>
         <summary>Do I have to add the extras?</summary>
@@ -217,7 +220,7 @@
 
     <details class="co-qa" id="co-qa" hidden>
       <summary>Sandbox QA (visible only with ?qa=1)</summary>
-      <p>Compare the subtotal above with the total inside Whop on every test. Whop's quote is authoritative and cannot be read from JavaScript.</p>
+      <p>Compare the subtotal above with the total inside Whop on every test. Whop’s quote is authoritative and cannot be read from JavaScript.</p>
       <pre id="log"></pre>
     </details>
   </main>
