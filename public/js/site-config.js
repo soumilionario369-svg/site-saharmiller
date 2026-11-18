@@ -12,7 +12,7 @@ window.SITE_CONFIG = {
   CHECKOUT_PAGE_PATH: "/checkout",
 
   // Public domain, e.g. "https://www.example.com". Leave "" until known (no canonical/og:url is written).
-  SITE_URL: "",
+  SITE_URL: "https://yumwithsarah.com",
 
   // Customer-support email shown on the policy/contact pages (fixed in the page copy).
   CONTACT_EMAIL: "millersarahj980@gmail.com",

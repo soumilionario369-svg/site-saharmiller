@@ -81,7 +81,10 @@
 
   // Canonical + og:url only once SITE_URL is configured
   if (cfg.SITE_URL) {
-    var base = cfg.SITE_URL.replace(/\/+$/, '') + '/';
+    // Each page points to its own address (home = "/", others = "/contact", etc.), never all to the home page.
+    var pathName = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    if (pathName.charAt(0) !== '/') pathName = '/' + pathName;
+    var base = cfg.SITE_URL.replace(/\/+$/, '') + pathName;
     var l = document.createElement('link'); l.rel = 'canonical'; l.href = base; document.head.appendChild(l);
     var m = document.createElement('meta'); m.setAttribute('property', 'og:url'); m.content = base; document.head.appendChild(m);
   }
