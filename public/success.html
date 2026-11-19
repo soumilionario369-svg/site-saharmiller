@@ -27,8 +27,8 @@
 <body>
   <main>
     <a class="brand" href="/">Sarah Miller</a>
-    <!-- Neutral by default. The thank-you view is shown ONLY when Whop returns status=success in the URL.
-         This page cannot verify a payment: the Whop confirmation email and dashboard are the real proof. -->
+    <!-- This page can NOT verify a payment: a URL parameter is editable by anyone. It never states that a payment
+         succeeded. Real proof = the Whop confirmation email and the Whop dashboard. -->
     <div id="view-neutral">
       <h1>Your order status</h1>
       <p>We couldn’t confirm a completed payment from this page. If you just paid, check your inbox for the confirmation email from Whop before trying again, so you are not charged twice.</p>
@@ -36,8 +36,8 @@
     </div>
 
     <div id="view-success" hidden>
-      <h1>Thank you for your purchase!</h1>
-      <p>Your payment was received. Your digital cookbooks will be available through your Whop account.</p>
+      <h1>Thank you!</h1>
+      <p>If your payment went through, Whop is sending your confirmation email now. That email and your Whop account are what confirm your purchase and give you access to your digital cookbooks. This page does not confirm payment by itself.</p>
       <section class="card" aria-labelledby="next">
         <h2 id="next">What happens next</h2>
         <ul>

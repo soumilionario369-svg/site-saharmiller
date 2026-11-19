@@ -20,8 +20,8 @@ window.SITE_CONFIG = {
   // Contact form endpoint (server-side handler in api/contact.js; needs email-provider env vars, see README).
   CONTACT_ENDPOINT: "/api/contact",
 
-  // Effective date of the Privacy and Refund policies. Leave "" until legal approval; set e.g. "March 1, 2027" then.
-  LEGAL_EFFECTIVE_DATE: "",
+  // Effective date of the Privacy and Refund policies (also written in the page HTML by scripts/build-pages.mjs).
+  LEGAL_EFFECTIVE_DATE: "November 18, 2026",
 
   // Displayed pricing (single source for hero + final offer). Display only: the real charge is set in Whop.
   // The reference price/discount must be a genuine, supportable offer before publishing (see QA-CHECKLIST.md).
@@ -37,7 +37,7 @@ window.SITE_CONFIG = {
 
   // true = review build: shows QA notices. Set false for production
   // (also remove the <meta name="robots" content="noindex, nofollow"> tag in every HTML file).
-  STAGING: true,
+  STAGING: false,
 
   // true = always show QA notices (red preview warning, "Checkout link pending setup") while STAGING is true.
   // Otherwise add ?qa=1 to the URL to see them. Visitors never see them.
