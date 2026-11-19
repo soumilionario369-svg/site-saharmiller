@@ -1,14 +1,64 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Payment return</title>
-<style>body{font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:0 auto;padding:24px 16px}</style></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Thank You | Sarah Miller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=DM+Sans:wght@400;500;600&display=swap">
+  <style>
+    :root { --navy: #09273A; --cream: #F7E9D3; --gold: #C89526; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #FCF7F1; color: #27343A; font: 16px/1.6 "DM Sans", system-ui, sans-serif; }
+    main { max-width: 600px; margin: 0 auto; padding: 56px 20px 40px; }
+    h1 { font: 700 2.1rem/1.15 "Cormorant Garamond", Georgia, serif; color: var(--navy); margin: 0 0 14px; }
+    p { margin: 0 0 14px; }
+    .card { background: #fff; border: 1px solid #E8DCC8; border-radius: 16px; padding: 22px 22px 8px; margin: 22px 0; }
+    .card h2 { font: 700 1.25rem/1.2 "Cormorant Garamond", Georgia, serif; color: var(--navy); margin: 0 0 10px; }
+    .card ul { margin: 0 0 14px; padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
+    a { color: var(--navy); }
+    .btn { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 10px; }
+    .brand { font: 700 1.25rem "Cormorant Garamond", Georgia, serif; color: var(--navy); text-decoration: none; display: inline-block; margin-bottom: 28px; }
+  </style>
+</head>
 <body>
-<h1>Returned from Whop</h1>
-<p>Query parameters received (read <code>status</code>; this page proves nothing about fulfillment):</p>
-<pre id="p">(none)</pre>
-<p>Verify the order and memberships in the Whop sandbox dashboard.</p>
-<script>
-  var o = {}; new URLSearchParams(location.search).forEach(function (v, k) { o[k] = v; });
-  if (Object.keys(o).length) document.getElementById("p").textContent = JSON.stringify(o, null, 2);
-</script>
-</body></html>
+  <main>
+    <a class="brand" href="/">Sarah Miller</a>
+    <!-- Neutral by default. The thank-you view is shown ONLY when Whop returns status=success in the URL.
+         This page cannot verify a payment: the Whop confirmation email and dashboard are the real proof. -->
+    <div id="view-neutral">
+      <h1>Your order status</h1>
+      <p>We couldn’t confirm a completed payment from this page. If you just paid, check your inbox for the confirmation email from Whop before trying again, so you are not charged twice.</p>
+      <p>If you didn’t complete a purchase, you can <a href="/checkout">return to checkout</a>.</p>
+    </div>
+
+    <div id="view-success" hidden>
+      <h1>Thank you for your purchase!</h1>
+      <p>Your payment was received. Your digital cookbooks will be available through your Whop account.</p>
+      <section class="card" aria-labelledby="next">
+        <h2 id="next">What happens next</h2>
+        <ul>
+          <li>Check your inbox for the purchase confirmation from Whop. If you don’t see it, look in your spam or promotions folder.</li>
+          <li>Follow the access instructions in that email, or sign in at whop.com with the email you used at checkout.</li>
+          <li>Your recipes are digital. Nothing is shipped.</li>
+        </ul>
+      </section>
+    </div>
+
+    <p>Need help with your order or your access? <a href="/contact">Contact us</a> and include the email you used at checkout. You can also review our <a href="/refund-policy">Refund Policy</a>.</p>
+    <p><a class="btn" href="/">Back to Sarah Miller</a></p>
+  </main>
+  <script>
+    (function () {
+      var s = (new URLSearchParams(location.search).get('status') || '').toLowerCase();
+      if (s === 'success') {
+        document.getElementById('view-neutral').hidden = true;
+        document.getElementById('view-success').hidden = false;
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -36,6 +36,7 @@
 .co-skip:focus { top: 12px; }
 
 /* Sandbox banner */
+.co-env[hidden] { display: none; }
 .co-env { background: #8E1B2E; color: #fff; text-align: center; font-weight: 600; font-size: .8125rem; padding: 6px var(--gutter); letter-spacing: .02em; }
 
 /* Header */

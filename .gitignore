@@ -38,3 +38,6 @@ Thumbs.db
 # Page 2 checkout: internal notes and review screenshots
 /CHECKOUT_QA_NOTES.md
 /checkout/review/
+
+# Local backups (never published)
+/_backup/

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- LOCAL PREVIEW ONLY: this page lives outside public/ and is not published. -->
+  <!-- Checkout pages are kept out of search results on purpose (noindex). -->
   <meta name="robots" content="noindex, nofollow">
   <title>Complete Your Recipe Collection | Sarah Miller</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309273A'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23F7E9D3'%3ES%3C/text%3E%3C/svg%3E">
@@ -15,7 +15,8 @@
 <body class="checkout-page">
   <a class="co-skip" href="#co-main">Skip to checkout</a>
 
-  <div class="co-env" id="co-env" role="note">SANDBOX / TEST CHECKOUT. No real charges. Not published.</div>
+  <!-- Hidden for customers. checkout.js reveals it ONLY when config.js says ENVIRONMENT: "sandbox". -->
+  <div class="co-env" id="co-env" role="note" hidden>SANDBOX / TEST CHECKOUT. No real charges.</div>
 
   <header class="co-header">
     <div class="co-wrap co-header__inner">
@@ -127,12 +128,12 @@
           <!-- Add-on 2 -->
           <div class="co-addon" id="addon-christmas">
             <label class="co-addon__label" for="cb-christmas">
-              <input class="co-addon__input" type="checkbox" id="cb-christmas" name="addon-christmas" aria-label="Add 30 Christmas Desserts for $4.97, regularly $6.21, 20 percent off">
+              <input class="co-addon__input" type="checkbox" id="cb-christmas" name="addon-christmas" aria-label="Add 30 Christmas Desserts to Share for $4.97, regularly $6.21, 20 percent off">
               <span class="co-addon__content">
                 <img class="co-addon__cover" src="/checkout/assets/addon-christmas-220.webp"
                      srcset="/checkout/assets/addon-christmas-220.webp 220w, /checkout/assets/addon-christmas-440.webp 440w" sizes="(min-width: 640px) 120px, 76px"
                      width="440" height="440" loading="lazy" decoding="async"
-                     alt="Cover of the optional digital cookbook 30 Christmas Desserts.">
+                     alt="Cover of the optional digital cookbook 30 Christmas Desserts to Share.">
                 <span class="co-addon__head">
                   <span class="co-addon__eyebrow">OPTIONAL DIGITAL E-BOOK</span>
                   <span class="co-addon__headline">Make This Christmas Even Sweeter!</span>
@@ -146,7 +147,7 @@
                     <span role="listitem">More variety for your festive table</span>
                   </span>
                   <span class="co-addon__foot">
-                    <span class="co-addon__product">30 Christmas Desserts</span>
+                    <span class="co-addon__product">30 Christmas Desserts to Share</span>
                     <span class="co-addon__price" id="price-christmas"><span class="co-addon__was" aria-hidden="true"><s>$6.21</s> <span class="co-addon__off">20% OFF</span></span><span aria-hidden="true">+$4.97</span></span>
                   </span>
                   <span class="co-addon__note">Optional digital cookbook · One-time purchase</span>
@@ -219,7 +220,7 @@
     </section>
 
     <details class="co-qa" id="co-qa" hidden>
-      <summary>Sandbox QA (visible only with ?qa=1)</summary>
+      <summary>Checkout QA (visible only with ?qa=1)</summary>
       <p>Compare the subtotal above with the total inside Whop on every test. Whop’s quote is authoritative and cannot be read from JavaScript.</p>
       <pre id="log"></pre>
     </details>

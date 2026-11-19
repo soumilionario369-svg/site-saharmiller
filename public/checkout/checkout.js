@@ -24,7 +24,8 @@
   function notice(msg) { var n = $("co-notice"); n.textContent = msg; n.hidden = !msg; }
   function status(msg) { $("co-status").textContent = msg; }
 
-  if (C.ENVIRONMENT !== "sandbox") $("co-env").textContent = "PRODUCTION MODE: real charges";
+  // Test banner: shown only in sandbox. Customers never see it in production.
+  if (C.ENVIRONMENT === "sandbox") $("co-env").hidden = false;
 
   var isPlaceholder = function (id) { return !id || /^PLACEHOLDER/.test(id); };
 
